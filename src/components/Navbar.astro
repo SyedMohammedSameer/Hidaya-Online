@@ -20,12 +20,12 @@ const trialHref = "/free-trial/";
       <Logo />
 
       <!-- Desktop nav -->
-      <nav class="hidden items-center gap-1 lg:flex" aria-label="Primary">
+      <nav class="hidden items-center gap-0.5 lg:flex" aria-label="Primary">
         {
           navLinks.map((link) => (
             <a
               href={link.href}
-              class="rounded-full px-3.5 py-2 text-sm font-medium text-ink-700 transition-colors hover:bg-teal-50 hover:text-teal-800"
+              class="whitespace-nowrap rounded-full px-3 py-2 text-sm font-medium text-ink-700 transition-colors hover:bg-teal-50 hover:text-teal-800"
             >
               {link.label}
             </a>
@@ -33,21 +33,22 @@ const trialHref = "/free-trial/";
         }
       </nav>
 
-      <div class="hidden items-center gap-2.5 lg:flex">
+      <div class="hidden items-center gap-1.5 lg:flex">
         <a
           href={waHref}
           target="_blank"
           rel="noopener noreferrer"
-          class="inline-flex items-center gap-2 rounded-full px-3.5 py-2 text-sm font-semibold text-teal-800 transition-colors hover:bg-teal-50"
+          aria-label="Contact us on WhatsApp"
+          class="inline-flex items-center gap-2 whitespace-nowrap rounded-full px-3 py-2 text-sm font-semibold text-teal-800 transition-colors hover:bg-teal-50"
         >
           <svg viewBox="0 0 24 24" class="size-4 fill-current" aria-hidden="true">
             <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Zm5.78 14.06c-.24.67-1.42 1.31-1.95 1.36-.5.05-1.13.07-1.83-.11-.42-.14-.96-.32-1.66-.62-2.92-1.26-4.83-4.2-4.98-4.4-.14-.2-1.18-1.57-1.18-3 0-1.42.75-2.12 1.01-2.41.27-.29.58-.36.78-.36l.56.01c.18 0 .42-.07.65.5.24.59.82 2.02.89 2.16.07.14.12.31.02.51-.1.2-.15.31-.29.48l-.44.51c-.14.14-.29.3-.12.59.17.29.74 1.22 1.59 1.98 1.09.97 2.01 1.27 2.3 1.42.29.14.46.12.63-.07.17-.2.72-.84.91-1.13.19-.29.39-.24.65-.14.27.1 1.7.8 1.99.95.29.14.48.22.55.34.07.12.07.7-.17 1.37Z" />
           </svg>
-          WhatsApp
+          <span class="hidden xl:inline">WhatsApp</span>
         </a>
         <a
           href={trialHref}
-          class="inline-flex items-center justify-center gap-2 rounded-full bg-teal-700 px-5 py-2.5 text-sm font-semibold text-sand-50 shadow-soft transition-all duration-300 hover:-translate-y-0.5 hover:bg-teal-800 hover:shadow-lift"
+          class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-full bg-teal-700 px-4 py-2.5 text-sm font-semibold text-sand-50 shadow-soft transition-all duration-300 hover:-translate-y-0.5 hover:bg-teal-800 hover:shadow-lift"
         >
           Book Free Trial
         </a>

@@ -21,9 +21,9 @@ export const courses: Course[] = [
     icon: "BookOpen",
     level: "Beginner",
     summary:
-      "The perfect starting point — learn Arabic letters, correct pronunciation, and how to join words.",
+      "The perfect starting point. Learn Arabic letters, correct pronunciation, and how to join words.",
     details:
-      "A structured foundation course covering the Arabic alphabet, letter sounds (makharij), harakaat, and the joining of letters into words — preparing students to read the Quran with confidence.",
+      "A structured foundation course covering the Arabic alphabet, letter sounds (makharij), harakaat, and the joining of letters into words, preparing students to read the Quran with confidence.",
     points: [
       "Arabic letters & their correct sounds",
       "Pronunciation from the right articulation points",
@@ -57,7 +57,7 @@ export const courses: Course[] = [
     summary:
       "Beautify and perfect your recitation by learning the rules of Tajweed, step by step.",
     details:
-      "Learn the rules that govern correct Quranic recitation — from the characteristics of letters to the rules of noon, meem, madd, and more — applied directly to your own reading.",
+      "Learn the rules that govern correct Quranic recitation, from the characteristics of letters to the rules of noon, meem, madd, and more, applied directly to your own reading.",
     points: [
       "Rules of Noon Saakin & Tanween",
       "Rules of Meem Saakin & Madd",
@@ -108,7 +108,7 @@ export const courses: Course[] = [
     summary:
       "Understand core Islamic beliefs, manners, supplications, and important daily practices.",
     details:
-      "An accessible introduction to the fundamentals of faith (Aqeedah), good character (Akhlaq), Islamic manners (Adab), and the practices every Muslim should know — suitable for children and adults.",
+      "An accessible introduction to the fundamentals of faith (Aqeedah), good character (Akhlaq), Islamic manners (Adab), and the practices every Muslim should know, suitable for children and adults.",
     points: [
       "Core beliefs & pillars of Islam",
       "Islamic manners & good character",

@@ -22,11 +22,11 @@ const {
   path = "/",
 } = Astro.props;
 
-const pageTitle = title ? `${title} · ${site.shortName}` : `${site.name} — ${site.tagline}`;
+const pageTitle = title ? `${title} · ${site.shortName}` : `${site.name} · ${site.tagline}`;
 const canonical = new URL(path, site.url).toString();
 const ogImage = new URL("/og.svg", site.url).toString();
 
-// Structured data — EducationalOrganization
+// Structured data: EducationalOrganization
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "EducationalOrganization",

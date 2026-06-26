@@ -16,12 +16,13 @@ const trialPoints = [
 
 const fieldCls =
   "mt-1.5 w-full rounded-xl border-0 bg-sand-50 px-4 py-3 text-ink-900 shadow-sm ring-1 ring-inset ring-teal-200/70 transition placeholder:text-ink-500/60 focus:bg-white focus:ring-2 focus:ring-inset focus:ring-teal-500";
+const selectCls = `${fieldCls} select-chevron cursor-pointer`;
 const labelCls = "block text-sm font-semibold text-ink-700";
 ---
 
 <Layout
   title="Book a Free Trial"
-  description="Book your free, no-obligation online Quran trial class at Hidaayah Online Quran Academy. Choose your course and preferred timing — we'll be in touch."
+  description="Book your free, no-obligation online Quran trial class at Hidaayah Online Quran Academy. Choose your course and preferred timing and we'll be in touch."
   path="/free-trial/"
 >
   <PageHeader eyebrow="Free Trial Class" title="Book your free trial class" arabic="هَيَّا بِنَا نَبْدَأ">
@@ -108,7 +109,7 @@ const labelCls = "block text-sm font-semibold text-ink-700";
               </div>
               <div>
                 <label class={labelCls} for="student">Student</label>
-                <select class={fieldCls} id="student" name="student">
+                <select class={selectCls} id="student" name="student">
                   <option value="Myself (adult)">Myself (adult)</option>
                   <option value="My child">My child</option>
                   <option value="Teenager">Teenager</option>
@@ -120,14 +121,14 @@ const labelCls = "block text-sm font-semibold text-ink-700";
             <div class="grid gap-5 sm:grid-cols-2">
               <div>
                 <label class={labelCls} for="course">Course of interest</label>
-                <select class={fieldCls} id="course" name="course">
-                  <option value="Not sure — please advise">Not sure — please advise</option>
+                <select class={selectCls} id="course" name="course">
+                  <option value="Not sure, please advise">Not sure, please advise</option>
                   {courses.map((c) => <option value={c.title}>{c.title}</option>)}
                 </select>
               </div>
               <div>
                 <label class={labelCls} for="timing">Preferred timing</label>
-                <select class={fieldCls} id="timing" name="timing">
+                <select class={selectCls} id="timing" name="timing">
                   <option value="Morning">Morning</option>
                   <option value="Afternoon">Afternoon</option>
                   <option value="Evening">Evening</option>

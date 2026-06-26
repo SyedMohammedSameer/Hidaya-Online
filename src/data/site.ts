@@ -1,6 +1,6 @@
 /**
  * Central site configuration.
- * Edit values here — they propagate across the whole site.
+ * Edit values here; they propagate across the whole site.
  */
 
 export const site = {
@@ -9,14 +9,14 @@ export const site = {
   tagline: "A Trusted Way to Learn Quran from Home",
   subtitle: "Learn Quran Online with Proper Tajweed",
   description:
-    "Hidaayah Online Quran Academy offers one-to-one live online Quran classes for kids & adults — Noorani Qaida, Quran Reading, Tajweed, Hifz, Salah, Duas & Basic Islamic Studies. Free trial class available.",
+    "Hidaayah Online Quran Academy offers one-to-one live online Quran classes for kids & adults: Noorani Qaida, Quran Reading, Tajweed, Hifz, Salah, Duas & Basic Islamic Studies. Free trial class available.",
   url: "https://hidaayah-online.netlify.app",
   email: "",
   // Indian number in international format for display
   phoneDisplay: "+91 76709 65471",
   // Digits only (country code + number) for wa.me / tel links
   whatsappNumber: "917670965471",
-  // Monthly fee — change in one place
+  // Monthly fee, change in one place
   fee: {
     amount: 500,
     currency: "₹",

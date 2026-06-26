@@ -7,7 +7,7 @@ export const faqs: Faq[] = [
   },
   {
     q: "Who can join the academy?",
-    a: "Kids, teenagers, and adults can all join — brothers and sisters alike. We welcome complete beginners as well as students looking to improve.",
+    a: "Kids, teenagers, and adults can all join, brothers and sisters alike. We welcome complete beginners as well as students looking to improve.",
   },
   {
     q: "Do you offer a free trial class?",
@@ -19,7 +19,7 @@ export const faqs: Faq[] = [
   },
   {
     q: "Can beginners join?",
-    a: "Absolutely — beginners are most welcome. We teach from the very basic level, starting with Noorani Qaida.",
+    a: "Absolutely, beginners are most welcome. We teach from the very basic level, starting with Noorani Qaida.",
   },
   {
     q: "What are the class timings?",
