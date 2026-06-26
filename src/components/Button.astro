@@ -1,0 +1,45 @@
+---
+interface Props {
+  href: string;
+  variant?: "primary" | "secondary" | "ghost" | "whatsapp";
+  size?: "md" | "lg";
+  class?: string;
+  external?: boolean;
+  id?: string;
+}
+const {
+  href,
+  variant = "primary",
+  size = "md",
+  class: className = "",
+  external = false,
+  id,
+} = Astro.props;
+
+const base =
+  "group inline-flex items-center justify-center gap-2 rounded-full font-semibold tracking-tight transition-all duration-300 focus-visible:outline-2 focus-visible:outline-offset-2 disabled:opacity-60";
+
+const sizes = {
+  md: "px-5 py-2.5 text-sm",
+  lg: "px-7 py-3.5 text-[0.95rem]",
+};
+
+const variants = {
+  primary:
+    "bg-teal-700 text-sand-50 shadow-soft hover:bg-teal-800 hover:shadow-lift hover:-translate-y-0.5 active:translate-y-0",
+  secondary:
+    "bg-sand-50 text-teal-800 ring-1 ring-inset ring-teal-200 hover:bg-white hover:ring-teal-300 hover:-translate-y-0.5 shadow-soft",
+  ghost:
+    "text-teal-800 hover:bg-teal-50",
+  whatsapp:
+    "bg-[#25D366] text-white shadow-soft hover:brightness-105 hover:-translate-y-0.5 hover:shadow-lift active:translate-y-0",
+};
+
+const cls = `${base} ${sizes[size]} ${variants[variant]} ${className}`;
+const rel = external ? "noopener noreferrer" : undefined;
+const target = external ? "_blank" : undefined;
+---
+
+<a href={href} id={id} class={cls} rel={rel} target={target}>
+  <slot />
+</a>

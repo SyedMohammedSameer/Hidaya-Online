@@ -1,0 +1,61 @@
+---
+import { Icon } from "astro-icon/components";
+import SectionHeading from "../SectionHeading.astro";
+import Button from "../Button.astro";
+import { courses } from "../../data/courses";
+import { courseIcon } from "../../data/icons";
+---
+
+<section id="courses" class="scroll-mt-24 py-20 sm:py-24 lg:py-28">
+  <div class="container-x">
+    <SectionHeading eyebrow="Our Courses" title="Personalized online courses for every level">
+      From your very first letter to complete memorization — choose the path that
+      fits your goals, taught one-to-one by caring teachers.
+    </SectionHeading>
+
+    <div class="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      {
+        courses.map((course, i) => (
+          <a
+            href={`/courses/#${course.slug}`}
+            class="group relative flex flex-col overflow-hidden rounded-2xl bg-white p-7 shadow-soft ring-1 ring-teal-100/70 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-lift"
+            data-reveal
+            data-reveal-delay={(i % 3) * 80}
+          >
+            <div class="flex items-center justify-between">
+              <span class="grid size-14 place-items-center rounded-2xl bg-teal-50 text-teal-600 transition-colors duration-300 group-hover:bg-teal-600 group-hover:text-sand-50">
+                <Icon name={courseIcon[course.icon] ?? "lucide:book-open"} class="size-7" />
+              </span>
+              <span class="rounded-full bg-sand-100 px-3 py-1 text-xs font-medium text-ink-500">
+                {course.level}
+              </span>
+            </div>
+
+            <div class="mt-5 flex items-baseline justify-between gap-3">
+              <h3 class="text-xl font-semibold text-ink-900">{course.title}</h3>
+              {course.titleArabic && (
+                <span class="font-arabic text-lg text-teal-500/80">{course.titleArabic}</span>
+              )}
+            </div>
+
+            <p class="mt-2 flex-1 text-sm leading-relaxed text-ink-500">
+              {course.summary}
+            </p>
+
+            <span class="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-teal-700">
+              Learn more
+              <Icon name="lucide:arrow-right" class="size-4 transition-transform group-hover:translate-x-1" />
+            </span>
+          </a>
+        ))
+      }
+    </div>
+
+    <div class="mt-12 flex justify-center" data-reveal>
+      <Button href="/courses/" variant="secondary" size="lg">
+        View all course details
+        <Icon name="lucide:arrow-right" class="size-4" />
+      </Button>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,67 @@
+---
+import { Icon } from "astro-icon/components";
+import SectionHeading from "../SectionHeading.astro";
+
+const reasons = [
+  {
+    icon: "lucide:user-round",
+    title: "One-to-one live classes",
+    text: "Personal, undivided attention in every live online session.",
+  },
+  {
+    icon: "lucide:users-round",
+    title: "Kids, teens & adults",
+    text: "Brothers and sisters of all ages are warmly welcome.",
+  },
+  {
+    icon: "lucide:trending-up",
+    title: "Beginner to advanced",
+    text: "Start from the very basics or continue from where you are.",
+  },
+  {
+    icon: "lucide:calendar-clock",
+    title: "Flexible timings",
+    text: "Morning and evening slots to suit busy families.",
+  },
+  {
+    icon: "lucide:gift",
+    title: "Free trial first",
+    text: "Try a class before admission — completely free, no pressure.",
+  },
+  {
+    icon: "lucide:heart-handshake",
+    title: "Friendly & structured",
+    text: "A supportive, organised approach that keeps students motivated.",
+  },
+];
+---
+
+<section class="relative overflow-hidden bg-teal-900 py-20 text-sand-100 sm:py-24 lg:py-28">
+  <div class="pattern-dots pointer-events-none absolute inset-0 opacity-[0.06]"></div>
+  <div class="container-x relative">
+    <SectionHeading eyebrow="Why Choose Us" title="Why families choose Hidaayah Online" class="[&_h2]:text-white [&_.eyebrow]:text-teal-300 [&_.eyebrow_span]:bg-teal-400">
+      <span class="text-sand-200/85">
+        Everything we do is built around making Quran learning effective, sincere
+        and easy to fit into everyday life.
+      </span>
+    </SectionHeading>
+
+    <div class="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      {
+        reasons.map((r, i) => (
+          <div
+            class="group rounded-2xl bg-white/[0.06] p-6 ring-1 ring-inset ring-white/10 backdrop-blur-sm transition-all duration-300 hover:bg-white/[0.1] hover:-translate-y-1"
+            data-reveal
+            data-reveal-delay={(i % 3) * 80}
+          >
+            <span class="grid size-12 place-items-center rounded-2xl bg-gold-400/20 text-gold-300 ring-1 ring-inset ring-gold-400/20 transition-colors group-hover:bg-gold-400 group-hover:text-teal-900">
+              <Icon name={r.icon} class="size-6" />
+            </span>
+            <h3 class="mt-5 text-lg font-semibold text-white">{r.title}</h3>
+            <p class="mt-2 text-sm leading-relaxed text-sand-200/80">{r.text}</p>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

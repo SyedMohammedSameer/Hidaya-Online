@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Hidaayah Online">
+  <rect width="64" height="64" rx="15" fill="#226458"/>
+  <!-- open book -->
+  <path d="M32 20c-4-2.6-9-3.4-14-2.4v23.8c5-1 10-.2 14 2.4 4-2.6 9-3.4 14-2.4V17.6c-5-1-10-.2-14 2.4Z"
+        fill="none" stroke="#faf6ee" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M32 20v23.8" stroke="#faf6ee" stroke-width="2.6" stroke-linecap="round"/>
+  <!-- crescent accent -->
+  <path d="M45.5 11.5a5.2 5.2 0 1 0 4.6 7.6 6.3 6.3 0 1 1-4.6-7.6Z" fill="#c9a86a"/>
+</svg>

@@ -1,0 +1,45 @@
+---
+import { Icon } from "astro-icon/components";
+import SectionHeading from "../SectionHeading.astro";
+
+const audiences = [
+  { icon: "lucide:baby", label: "Kids" },
+  { icon: "lucide:backpack", label: "Teenagers" },
+  { icon: "lucide:user-round", label: "Adults" },
+  { icon: "lucide:sprout", label: "Complete beginners" },
+  { icon: "lucide:sparkles", label: "Improving Tajweed" },
+  { icon: "lucide:brain", label: "Memorizing Quran" },
+  { icon: "lucide:users-round", label: "Brothers & sisters" },
+  { icon: "lucide:home", label: "Home-based learners" },
+];
+---
+
+<section class="scroll-mt-24 bg-sand-100 py-20 sm:py-24 lg:py-28">
+  <div class="container-x">
+    <div class="grid items-center gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
+      <div>
+        <SectionHeading eyebrow="Who It's For" title="Suitable for students of every age & stage" align="left">
+          Whether you are starting your very first lesson or looking to perfect your
+          recitation, there is a place for you at Hidaayah Online.
+        </SectionHeading>
+      </div>
+
+      <div class="grid grid-cols-2 gap-3 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2">
+        {
+          audiences.map((a, i) => (
+            <div
+              class="group flex items-center gap-3 rounded-2xl bg-white px-4 py-4 shadow-soft ring-1 ring-teal-100/60 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lift sm:px-5"
+              data-reveal
+              data-reveal-delay={(i % 2) * 70}
+            >
+              <span class="grid size-10 shrink-0 place-items-center rounded-xl bg-teal-50 text-teal-600 transition-colors group-hover:bg-teal-600 group-hover:text-sand-50">
+                <Icon name={a.icon} class="size-5" />
+              </span>
+              <span class="text-sm font-semibold text-ink-900 sm:text-base">{a.label}</span>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</section>

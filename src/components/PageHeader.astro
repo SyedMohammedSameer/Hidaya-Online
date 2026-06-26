@@ -1,0 +1,38 @@
+---
+interface Props {
+  eyebrow?: string;
+  title: string;
+  arabic?: string;
+}
+const { eyebrow, title, arabic } = Astro.props;
+---
+
+<section class="relative overflow-hidden bg-teal-900 text-sand-100">
+  <div class="pattern-dots pointer-events-none absolute inset-0 opacity-[0.06]"></div>
+  <div class="pointer-events-none absolute -right-16 -top-16 size-72 rounded-full bg-teal-700/40 blur-3xl"></div>
+  <div class="pointer-events-none absolute -bottom-24 left-1/4 size-72 rounded-full bg-gold-400/10 blur-3xl"></div>
+
+  <div class="container-x relative">
+    <div class="flex max-w-3xl flex-col items-start py-16 sm:py-20 lg:py-24">
+      {
+        eyebrow && (
+          <span class="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.16em] text-teal-300">
+            <span class="h-px w-6 bg-teal-400" />
+            {eyebrow}
+          </span>
+        )
+      }
+      <h1 class="mt-4 text-4xl font-semibold leading-tight text-balance text-white sm:text-5xl lg:text-[3.25rem]">
+        {title}
+      </h1>
+      {
+        Astro.slots.has("default") && (
+          <p class="mt-5 max-w-2xl text-lg leading-relaxed text-sand-200/85 text-pretty">
+            <slot />
+          </p>
+        )
+      }
+      {arabic && <p class="mt-6 font-arabic text-3xl text-gold-300">{arabic}</p>}
+    </div>
+  </div>
+</section>

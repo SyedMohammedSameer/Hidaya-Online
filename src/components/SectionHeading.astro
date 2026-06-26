@@ -1,0 +1,30 @@
+---
+interface Props {
+  eyebrow?: string;
+  title: string;
+  align?: "left" | "center";
+  class?: string;
+}
+const { eyebrow, title, align = "center", class: className = "" } = Astro.props;
+const alignment =
+  align === "center" ? "items-center text-center mx-auto" : "items-start text-left";
+---
+
+<div class={`flex max-w-2xl flex-col gap-4 ${alignment} ${className}`} data-reveal>
+  {eyebrow && (
+    <span class="eyebrow">
+      <span class="h-px w-6 bg-teal-400"></span>
+      {eyebrow}
+    </span>
+  )}
+  <h2 class="text-3xl font-semibold leading-tight text-balance sm:text-4xl lg:text-[2.75rem]">
+    {title}
+  </h2>
+  {
+    Astro.slots.has("default") && (
+      <p class="text-lg leading-relaxed text-ink-500 text-pretty">
+        <slot />
+      </p>
+    )
+  }
+</div>

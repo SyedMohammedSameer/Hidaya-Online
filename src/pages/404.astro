@@ -1,0 +1,28 @@
+---
+import { Icon } from "astro-icon/components";
+import Layout from "../layouts/Layout.astro";
+import Button from "../components/Button.astro";
+---
+
+<Layout title="Page Not Found" description="The page you are looking for could not be found." path="/404/">
+  <section class="container-x">
+    <div class="mx-auto flex max-w-xl flex-col items-center py-24 text-center sm:py-32">
+      <p class="font-serif text-7xl font-semibold text-teal-700 sm:text-8xl">404</p>
+      <p class="mt-4 font-arabic text-2xl text-teal-500">إِنَّا لِلّٰهِ</p>
+      <h1 class="mt-4 text-3xl font-semibold text-balance sm:text-4xl">
+        This page could not be found
+      </h1>
+      <p class="mt-4 text-lg text-ink-500">
+        The page you're looking for may have moved or no longer exists. Let's get
+        you back on track.
+      </p>
+      <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+        <Button href="/" size="lg">
+          <Icon name="lucide:home" class="size-4" />
+          Back to home
+        </Button>
+        <Button href="/courses/" variant="secondary" size="lg">View courses</Button>
+      </div>
+    </div>
+  </section>
+</Layout>

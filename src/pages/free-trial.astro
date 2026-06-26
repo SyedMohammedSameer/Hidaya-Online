@@ -1,0 +1,161 @@
+---
+import { Icon } from "astro-icon/components";
+import Layout from "../layouts/Layout.astro";
+import PageHeader from "../components/PageHeader.astro";
+import { courses } from "../data/courses";
+import { site, whatsappLink, whatsappMessages } from "../data/site";
+
+const waHref = whatsappLink(whatsappMessages.trial);
+
+const trialPoints = [
+  { icon: "lucide:clipboard-check", text: "Student level assessment" },
+  { icon: "lucide:presentation", text: "Introduction to our teaching method" },
+  { icon: "lucide:compass", text: "Guidance for choosing the right course" },
+  { icon: "lucide:calendar-clock", text: "Flexible discussion about timings" },
+];
+
+const fieldCls =
+  "mt-1.5 w-full rounded-xl border-0 bg-sand-50 px-4 py-3 text-ink-900 shadow-sm ring-1 ring-inset ring-teal-200/70 transition placeholder:text-ink-500/60 focus:bg-white focus:ring-2 focus:ring-inset focus:ring-teal-500";
+const labelCls = "block text-sm font-semibold text-ink-700";
+---
+
+<Layout
+  title="Book a Free Trial"
+  description="Book your free, no-obligation online Quran trial class at Hidaayah Online Quran Academy. Choose your course and preferred timing — we'll be in touch."
+  path="/free-trial/"
+>
+  <PageHeader eyebrow="Free Trial Class" title="Book your free trial class" arabic="هَيَّا بِنَا نَبْدَأ">
+    Fill in the form below and we'll reach out to confirm your free, no-obligation
+    trial class. Prefer to chat? Message us on WhatsApp anytime.
+  </PageHeader>
+
+  <section class="py-16 sm:py-20 lg:py-24">
+    <div class="container-x">
+      <div class="grid gap-10 lg:grid-cols-[1fr_1.3fr] lg:gap-14">
+        <!-- Left: what to expect -->
+        <aside class="lg:sticky lg:top-28 lg:self-start" data-reveal>
+          <h2 class="font-serif text-2xl font-semibold text-ink-900">What to expect</h2>
+          <p class="mt-3 text-ink-500">
+            The trial class is completely free with no obligation to enroll. Here's
+            what we'll cover:
+          </p>
+          <ul class="mt-6 space-y-4">
+            {
+              trialPoints.map((p) => (
+                <li class="flex items-start gap-3">
+                  <span class="grid size-10 shrink-0 place-items-center rounded-xl bg-teal-50 text-teal-600">
+                    <Icon name={p.icon} class="size-5" />
+                  </span>
+                  <span class="pt-2 text-ink-700">{p.text}</span>
+                </li>
+              ))
+            }
+          </ul>
+
+          <div class="mt-8 rounded-2xl bg-teal-50 p-5 ring-1 ring-teal-100">
+            <p class="text-sm font-semibold text-teal-800">Prefer WhatsApp?</p>
+            <p class="mt-1 text-sm text-ink-600">
+              Message us directly and we'll arrange your trial right away.
+            </p>
+            <a
+              href={waHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="mt-4 inline-flex items-center gap-2 rounded-full bg-[#25D366] px-5 py-2.5 text-sm font-semibold text-white shadow-soft transition hover:brightness-105"
+            >
+              <svg viewBox="0 0 24 24" class="size-4 fill-current" aria-hidden="true">
+                <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Zm5.78 14.06c-.24.67-1.42 1.31-1.95 1.36-.5.05-1.13.07-1.83-.11-.42-.14-.96-.32-1.66-.62-2.92-1.26-4.83-4.2-4.98-4.4-.14-.2-1.18-1.57-1.18-3 0-1.42.75-2.12 1.01-2.41.27-.29.58-.36.78-.36l.56.01c.18 0 .42-.07.65.5.24.59.82 2.02.89 2.16.07.14.12.31.02.51-.1.2-.15.31-.29.48l-.44.51c-.14.14-.29.3-.12.59.17.29.74 1.22 1.59 1.98 1.09.97 2.01 1.27 2.3 1.42.29.14.46.12.63-.07.17-.2.72-.84.91-1.13.19-.29.39-.24.65-.14.27.1 1.7.8 1.99.95.29.14.48.22.55.34.07.12.07.7-.17 1.37Z" />
+              </svg>
+              Chat on WhatsApp
+            </a>
+          </div>
+        </aside>
+
+        <!-- Right: form -->
+        <div
+          class="rounded-3xl bg-white p-6 shadow-lift ring-1 ring-teal-100 sm:p-8 lg:p-10"
+          data-reveal
+          data-reveal-delay="80"
+        >
+          <form
+            name="free-trial"
+            method="POST"
+            data-netlify="true"
+            netlify-honeypot="bot-field"
+            action="/thank-you/"
+            class="grid gap-5"
+          >
+            <input type="hidden" name="form-name" value="free-trial" />
+            <p class="hidden">
+              <label>Don't fill this out: <input name="bot-field" /></label>
+            </p>
+
+            <div class="grid gap-5 sm:grid-cols-2">
+              <div>
+                <label class={labelCls} for="name">Full name <span class="text-teal-600">*</span></label>
+                <input class={fieldCls} type="text" id="name" name="name" required autocomplete="name" placeholder="e.g. Aisha Khan" />
+              </div>
+              <div>
+                <label class={labelCls} for="phone">Phone / WhatsApp <span class="text-teal-600">*</span></label>
+                <input class={fieldCls} type="tel" id="phone" name="phone" required autocomplete="tel" placeholder="+91 …" />
+              </div>
+            </div>
+
+            <div class="grid gap-5 sm:grid-cols-2">
+              <div>
+                <label class={labelCls} for="email">Email <span class="font-normal text-ink-500">(optional)</span></label>
+                <input class={fieldCls} type="email" id="email" name="email" autocomplete="email" placeholder="you@example.com" />
+              </div>
+              <div>
+                <label class={labelCls} for="student">Student</label>
+                <select class={fieldCls} id="student" name="student">
+                  <option value="Myself (adult)">Myself (adult)</option>
+                  <option value="My child">My child</option>
+                  <option value="Teenager">Teenager</option>
+                  <option value="Other">Other</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="grid gap-5 sm:grid-cols-2">
+              <div>
+                <label class={labelCls} for="course">Course of interest</label>
+                <select class={fieldCls} id="course" name="course">
+                  <option value="Not sure — please advise">Not sure — please advise</option>
+                  {courses.map((c) => <option value={c.title}>{c.title}</option>)}
+                </select>
+              </div>
+              <div>
+                <label class={labelCls} for="timing">Preferred timing</label>
+                <select class={fieldCls} id="timing" name="timing">
+                  <option value="Morning">Morning</option>
+                  <option value="Afternoon">Afternoon</option>
+                  <option value="Evening">Evening</option>
+                  <option value="Flexible">Flexible</option>
+                </select>
+              </div>
+            </div>
+
+            <div>
+              <label class={labelCls} for="message">Anything else? <span class="font-normal text-ink-500">(optional)</span></label>
+              <textarea class={fieldCls} id="message" name="message" rows="4" placeholder="Tell us about your current level, goals, or preferred days…"></textarea>
+            </div>
+
+            <button
+              type="submit"
+              class="group mt-1 inline-flex w-full items-center justify-center gap-2 rounded-full bg-teal-700 px-7 py-3.5 font-semibold text-sand-50 shadow-soft transition-all duration-300 hover:-translate-y-0.5 hover:bg-teal-800 hover:shadow-lift sm:w-auto"
+            >
+              Request my free trial
+              <Icon name="lucide:arrow-right" class="size-4 transition-transform group-hover:translate-x-1" />
+            </button>
+
+            <p class="text-xs text-ink-500">
+              By submitting, you agree to be contacted about your trial class. We
+              respect your privacy and never share your details.
+            </p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

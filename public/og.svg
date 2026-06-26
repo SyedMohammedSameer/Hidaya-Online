@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="Hidaayah Online Quran Academy">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1a4f46"/>
+      <stop offset="1" stop-color="#0f322c"/>
+    </linearGradient>
+    <pattern id="dots" width="34" height="34" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="2" fill="#ffffff" opacity="0.05"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#dots)"/>
+
+  <!-- mark -->
+  <g transform="translate(96 96)">
+    <rect width="96" height="96" rx="24" fill="#226458"/>
+    <g transform="translate(48 48) scale(1.05) translate(-32 -32)">
+      <path d="M32 20c-4-2.6-9-3.4-14-2.4v23.8c5-1 10-.2 14 2.4 4-2.6 9-3.4 14-2.4V17.6c-5-1-10-.2-14 2.4Z" fill="none" stroke="#faf6ee" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/>
+      <path d="M32 20v23.8" stroke="#faf6ee" stroke-width="2.6" stroke-linecap="round"/>
+      <path d="M45.5 11.5a5.2 5.2 0 1 0 4.6 7.6 6.3 6.3 0 1 1-4.6-7.6Z" fill="#c9a86a"/>
+    </g>
+  </g>
+
+  <text x="216" y="138" font-family="Georgia, serif" font-size="34" font-weight="600" fill="#faf6ee">Hidaayah <tspan fill="#82bcae">Online</tspan></text>
+  <text x="216" y="170" font-family="Helvetica, Arial, sans-serif" font-size="17" letter-spacing="4" fill="#b1d7cd">QURAN ACADEMY</text>
+
+  <text x="96" y="330" font-family="Georgia, serif" font-size="76" font-weight="600" fill="#ffffff">A Trusted Way to</text>
+  <text x="96" y="412" font-family="Georgia, serif" font-size="76" font-weight="600" fill="#ffffff">Learn Quran <tspan fill="#c9a86a">from Home</tspan></text>
+
+  <text x="96" y="478" font-family="Helvetica, Arial, sans-serif" font-size="28" fill="#d8ebe6">One-to-one live online classes for kids &amp; adults · Proper Tajweed</text>
+
+  <g transform="translate(96 520)">
+    <rect width="290" height="58" rx="29" fill="#faf6ee"/>
+    <text x="145" y="37" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="22" font-weight="700" fill="#1a4f46">Free Trial Class Available</text>
+  </g>
+
+  <text x="1104" y="566" text-anchor="end" font-family="Amiri, Georgia, serif" font-size="40" fill="#82bcae">القرآن الكريم</text>
+</svg>

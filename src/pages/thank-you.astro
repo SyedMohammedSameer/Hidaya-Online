@@ -1,0 +1,49 @@
+---
+import { Icon } from "astro-icon/components";
+import Layout from "../layouts/Layout.astro";
+import Button from "../components/Button.astro";
+import { whatsappLink, whatsappMessages } from "../data/site";
+
+const waHref = whatsappLink(whatsappMessages.trial);
+---
+
+<Layout title="Thank You" description="Thank you — your request has been received." path="/thank-you/">
+  <section class="relative overflow-hidden">
+    <div class="pointer-events-none absolute inset-0 -z-10">
+      <div class="pattern-dots absolute inset-0 opacity-[0.4] [mask-image:radial-gradient(ellipse_at_top,black,transparent_70%)]"></div>
+      <div class="absolute left-1/2 top-10 size-72 -translate-x-1/2 rounded-full bg-teal-200/40 blur-3xl"></div>
+    </div>
+
+    <div class="container-x">
+      <div class="mx-auto flex max-w-xl flex-col items-center py-24 text-center sm:py-32">
+        <span class="grid size-20 place-items-center rounded-full bg-teal-100 text-teal-700 shadow-soft">
+          <Icon name="lucide:check" class="size-10" />
+        </span>
+        <p class="mt-8 font-arabic text-3xl text-teal-600">جَزَاكَ اللَّٰهُ خَيْرًا</p>
+        <h1 class="mt-4 text-3xl font-semibold text-balance sm:text-4xl">
+          Thank you — we've received your request
+        </h1>
+        <p class="mt-4 text-lg leading-relaxed text-ink-500">
+          May Allah make your Quran journey easy and blessed. Our team will reach
+          out to you shortly to confirm your free trial class.
+        </p>
+        <p class="mt-2 text-ink-500">
+          For a faster response, you're welcome to message us directly on WhatsApp.
+        </p>
+
+        <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+          <Button href={waHref} variant="whatsapp" size="lg" external>
+            <svg viewBox="0 0 24 24" class="size-5 fill-current" aria-hidden="true">
+              <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Zm5.78 14.06c-.24.67-1.42 1.31-1.95 1.36-.5.05-1.13.07-1.83-.11-.42-.14-.96-.32-1.66-.62-2.92-1.26-4.83-4.2-4.98-4.4-.14-.2-1.18-1.57-1.18-3 0-1.42.75-2.12 1.01-2.41.27-.29.58-.36.78-.36l.56.01c.18 0 .42-.07.65.5.24.59.82 2.02.89 2.16.07.14.12.31.02.51-.1.2-.15.31-.29.48l-.44.51c-.14.14-.29.3-.12.59.17.29.74 1.22 1.59 1.98 1.09.97 2.01 1.27 2.3 1.42.29.14.46.12.63-.07.17-.2.72-.84.91-1.13.19-.29.39-.24.65-.14.27.1 1.7.8 1.99.95.29.14.48.22.55.34.07.12.07.7-.17 1.37Z" />
+            </svg>
+            Message on WhatsApp
+          </Button>
+          <Button href="/" variant="secondary" size="lg">
+            <Icon name="lucide:home" class="size-4" />
+            Back to home
+          </Button>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

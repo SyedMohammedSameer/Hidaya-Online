@@ -1,0 +1,83 @@
+---
+import { Icon } from "astro-icon/components";
+import SectionHeading from "../SectionHeading.astro";
+
+const beliefs = [
+  {
+    icon: "lucide:lightbulb",
+    title: "Easy to understand",
+    text: "Clear, step-by-step teaching that meets every student at their level.",
+  },
+  {
+    icon: "lucide:heart",
+    title: "Spiritually uplifting",
+    text: "Learning that nurtures a sincere, lasting connection with the Quran.",
+  },
+  {
+    icon: "lucide:calendar-clock",
+    title: "Flexible for families",
+    text: "Morning and evening timings that fit around busy schedules.",
+  },
+  {
+    icon: "lucide:user-round-check",
+    title: "Personalized",
+    text: "One-to-one classes shaped around each student’s pace and goals.",
+  },
+];
+---
+
+<section id="about" class="scroll-mt-24 py-20 sm:py-24 lg:py-28">
+  <div class="container-x">
+    <div class="grid gap-12 lg:grid-cols-2 lg:gap-16">
+      <!-- Left: narrative -->
+      <div>
+        <SectionHeading eyebrow="About the Academy" title="Building a strong connection with the Quran" align="left" />
+        <div class="mt-6 space-y-4 text-lg leading-relaxed text-ink-500" data-reveal>
+          <p>
+            Welcome to <strong class="font-semibold text-ink-900">Hidaayah Online Quran Academy</strong> — a trusted
+            platform for children and adults to learn Noorani Qaida, Quran Reading,
+            Tajweed, Hifz, Salah, Duas and Basic Islamic Studies from the comfort of
+            home through personalized online classes.
+          </p>
+          <p>
+            Our mission is to make Quran learning simple, structured, spiritually
+            beneficial and accessible for students of all ages — helping every
+            student build a strong connection with the Quran through proper
+            recitation, regular practice and sincere guidance.
+          </p>
+        </div>
+
+        <div class="mt-8 flex flex-wrap gap-3" data-reveal data-reveal-delay="80">
+          <span class="inline-flex items-center gap-2 rounded-full bg-teal-50 px-4 py-2 text-sm font-medium text-teal-800 ring-1 ring-inset ring-teal-100">
+            <Icon name="lucide:video" class="size-4" /> Live online sessions
+          </span>
+          <span class="inline-flex items-center gap-2 rounded-full bg-teal-50 px-4 py-2 text-sm font-medium text-teal-800 ring-1 ring-inset ring-teal-100">
+            <Icon name="lucide:home" class="size-4" /> Learn from home
+          </span>
+          <span class="inline-flex items-center gap-2 rounded-full bg-teal-50 px-4 py-2 text-sm font-medium text-teal-800 ring-1 ring-inset ring-teal-100">
+            <Icon name="lucide:sparkles" class="size-4" /> Proper Tajweed
+          </span>
+        </div>
+      </div>
+
+      <!-- Right: beliefs grid -->
+      <div class="grid gap-4 sm:grid-cols-2">
+        {
+          beliefs.map((b, i) => (
+            <div
+              class="group rounded-2xl bg-white p-6 shadow-soft ring-1 ring-teal-100/70 transition-all duration-300 hover:-translate-y-1 hover:shadow-lift"
+              data-reveal
+              data-reveal-delay={i * 80}
+            >
+              <span class="grid size-11 place-items-center rounded-xl bg-teal-50 text-teal-600 transition-colors group-hover:bg-teal-600 group-hover:text-sand-50">
+                <Icon name={b.icon} class="size-5" />
+              </span>
+              <h3 class="mt-4 text-lg font-semibold text-ink-900">{b.title}</h3>
+              <p class="mt-1.5 text-sm leading-relaxed text-ink-500">{b.text}</p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</section>

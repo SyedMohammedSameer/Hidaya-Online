@@ -1,0 +1,123 @@
+---
+import "@fontsource-variable/plus-jakarta-sans";
+import "@fontsource-variable/fraunces";
+import "@fontsource/amiri";
+import "../styles/global.css";
+
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+import WhatsAppFloat from "../components/WhatsAppFloat.astro";
+import { site } from "../data/site";
+
+interface Props {
+  title?: string;
+  description?: string;
+  /** Path of current page for canonical/OG, e.g. "/courses/" */
+  path?: string;
+}
+
+const {
+  title,
+  description = site.description,
+  path = "/",
+} = Astro.props;
+
+const pageTitle = title ? `${title} · ${site.shortName}` : `${site.name} — ${site.tagline}`;
+const canonical = new URL(path, site.url).toString();
+const ogImage = new URL("/og.svg", site.url).toString();
+
+// Structured data — EducationalOrganization
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "EducationalOrganization",
+  name: site.name,
+  alternateName: site.shortName,
+  description: site.description,
+  url: site.url,
+  telephone: `+${site.whatsappNumber}`,
+  sameAs: [`https://wa.me/${site.whatsappNumber}`],
+  areaServed: "Worldwide",
+  knowsLanguage: ["en", "ar"],
+};
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="theme-color" content="#226458" />
+    <meta name="generator" content={Astro.generator} />
+
+    <title>{pageTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={site.name} />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={pageTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify(jsonLd)}
+    />
+  </head>
+  <body>
+    <a
+      href="#main"
+      class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-lg focus:bg-teal-700 focus:px-4 focus:py-2 focus:text-sand-50"
+    >
+      Skip to content
+    </a>
+
+    <Navbar />
+
+    <main id="main">
+      <slot />
+    </main>
+
+    <Footer />
+    <WhatsAppFloat />
+
+    <!-- Scroll reveal (progressive enhancement) -->
+    <script>
+      const reveal = () => {
+        const els = document.querySelectorAll<HTMLElement>("[data-reveal]");
+        if (!("IntersectionObserver" in window) || els.length === 0) {
+          els.forEach((el) => el.classList.add("is-visible"));
+          return;
+        }
+        const io = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                const el = entry.target as HTMLElement;
+                const delay = el.dataset.revealDelay;
+                if (delay) el.style.transitionDelay = `${delay}ms`;
+                el.classList.add("is-visible");
+                io.unobserve(el);
+              }
+            });
+          },
+          { rootMargin: "0px 0px -8% 0px", threshold: 0.08 }
+        );
+        els.forEach((el) => io.observe(el));
+      };
+      reveal();
+      document.addEventListener("astro:page-load", reveal);
+    </script>
+  </body>
+</html>

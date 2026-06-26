@@ -1,0 +1,140 @@
+---
+import { Icon } from "astro-icon/components";
+import Button from "../Button.astro";
+import { whatsappLink, whatsappMessages } from "../../data/site";
+
+const waHref = whatsappLink(whatsappMessages.general);
+
+const badges = ["Admissions Open", "Free Trial Class", "One-to-One Classes"];
+---
+
+<section class="relative overflow-hidden">
+  <!-- ambient background -->
+  <div class="pointer-events-none absolute inset-0 -z-10">
+    <div class="pattern-dots absolute inset-0 opacity-[0.5] [mask-image:radial-gradient(ellipse_at_top,black,transparent_70%)]"></div>
+    <div class="absolute -left-24 top-10 size-72 rounded-full bg-teal-200/40 blur-3xl"></div>
+    <div class="absolute -right-20 top-40 size-80 rounded-full bg-gold-300/25 blur-3xl"></div>
+  </div>
+
+  <div class="container-x">
+    <div class="grid items-center gap-12 py-16 sm:py-20 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16 lg:py-24">
+      <!-- Copy -->
+      <div class="flex flex-col items-start">
+        <p class="font-arabic text-2xl text-teal-600/90" data-reveal>
+          بِسْمِ اللَّٰهِ الرَّحْمَٰنِ الرَّحِيمِ
+        </p>
+
+        <span
+          class="mt-5 inline-flex items-center gap-2 rounded-full bg-teal-50 px-4 py-1.5 text-sm font-semibold text-teal-700 ring-1 ring-inset ring-teal-200"
+          data-reveal
+        >
+          <span class="relative flex size-2">
+            <span class="absolute inline-flex size-full animate-ping rounded-full bg-teal-400 opacity-75"></span>
+            <span class="relative inline-flex size-2 rounded-full bg-teal-500"></span>
+          </span>
+          Admissions Open · Free Trial Available
+        </span>
+
+        <h1
+          class="mt-6 text-4xl font-semibold leading-[1.08] tracking-tight text-balance sm:text-5xl lg:text-6xl"
+          data-reveal
+          data-reveal-delay="60"
+        >
+          A Trusted Way to Learn <span class="text-teal-700">Quran</span> from Home
+        </h1>
+
+        <p
+          class="mt-5 max-w-xl text-lg leading-relaxed text-ink-500 text-pretty"
+          data-reveal
+          data-reveal-delay="120"
+        >
+          One-to-one live online classes for kids &amp; adults — Noorani Qaida,
+          Quran Reading, Tajweed, Hifz and Islamic Studies with proper Tajweed and
+          sincere guidance.
+        </p>
+
+        <div
+          class="mt-8 flex flex-col gap-3 sm:flex-row"
+          data-reveal
+          data-reveal-delay="180"
+        >
+          <Button href="/free-trial/" size="lg">
+            Book Free Trial
+            <Icon name="lucide:arrow-right" class="size-4 transition-transform group-hover:translate-x-1" />
+          </Button>
+          <Button href={waHref} variant="secondary" size="lg" external>
+            <svg viewBox="0 0 24 24" class="size-5 fill-[#25D366]" aria-hidden="true">
+              <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Zm5.78 14.06c-.24.67-1.42 1.31-1.95 1.36-.5.05-1.13.07-1.83-.11-.42-.14-.96-.32-1.66-.62-2.92-1.26-4.83-4.2-4.98-4.4-.14-.2-1.18-1.57-1.18-3 0-1.42.75-2.12 1.01-2.41.27-.29.58-.36.78-.36l.56.01c.18 0 .42-.07.65.5.24.59.82 2.02.89 2.16.07.14.12.31.02.51-.1.2-.15.31-.29.48l-.44.51c-.14.14-.29.3-.12.59.17.29.74 1.22 1.59 1.98 1.09.97 2.01 1.27 2.3 1.42.29.14.46.12.63-.07.17-.2.72-.84.91-1.13.19-.29.39-.24.65-.14.27.1 1.7.8 1.99.95.29.14.48.22.55.34.07.12.07.7-.17 1.37Z" />
+            </svg>
+            Contact on WhatsApp
+          </Button>
+        </div>
+
+        <ul class="mt-8 flex flex-wrap gap-x-6 gap-y-2" data-reveal data-reveal-delay="240">
+          {
+            badges.map((b) => (
+              <li class="inline-flex items-center gap-2 text-sm font-medium text-ink-700">
+                <Icon name="lucide:check-circle-2" class="size-4 text-teal-500" />
+                {b}
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+
+      <!-- Visual -->
+      <div class="relative" data-reveal data-reveal-delay="120">
+        <div class="relative mx-auto max-w-md lg:max-w-none">
+          <!-- main panel -->
+          <div class="relative overflow-hidden rounded-3xl bg-gradient-to-br from-teal-700 via-teal-700 to-teal-900 p-8 shadow-lift ring-1 ring-white/10 sm:p-10">
+            <div class="pattern-dots absolute inset-0 opacity-[0.08]"></div>
+            <div class="relative flex flex-col items-center text-center">
+              <span class="rounded-full bg-white/10 px-4 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-sand-100/90 ring-1 ring-inset ring-white/15">
+                القرآن الكريم
+              </span>
+              <p class="mt-8 font-arabic text-5xl leading-tight text-sand-50 sm:text-6xl">
+                اقْرَأْ
+              </p>
+              <p class="mt-4 max-w-xs text-pretty text-sm leading-relaxed text-sand-200/85">
+                “Read! In the name of your Lord who created.”
+              </p>
+              <span class="mt-1 text-xs font-medium uppercase tracking-wider text-gold-300">
+                Surah Al-‘Alaq · 96:1
+              </span>
+
+              <div class="mt-8 grid w-full grid-cols-3 gap-3">
+                <div class="rounded-2xl bg-white/10 p-3 ring-1 ring-inset ring-white/10">
+                  <p class="font-serif text-2xl font-semibold text-white">1:1</p>
+                  <p class="mt-1 text-[0.7rem] text-sand-200/80">Live classes</p>
+                </div>
+                <div class="rounded-2xl bg-white/10 p-3 ring-1 ring-inset ring-white/10">
+                  <p class="font-serif text-2xl font-semibold text-white">6</p>
+                  <p class="mt-1 text-[0.7rem] text-sand-200/80">Courses</p>
+                </div>
+                <div class="rounded-2xl bg-white/10 p-3 ring-1 ring-inset ring-white/10">
+                  <p class="font-serif text-2xl font-semibold text-white">All</p>
+                  <p class="mt-1 text-[0.7rem] text-sand-200/80">Ages</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- floating chips -->
+          <div class="absolute -left-4 top-10 hidden animate-[float_6s_ease-in-out_infinite] rounded-2xl bg-sand-50 p-3 shadow-lift ring-1 ring-teal-100 sm:flex sm:items-center sm:gap-2.5">
+            <span class="grid size-9 place-items-center rounded-xl bg-teal-50 text-teal-600">
+              <Icon name="lucide:badge-check" class="size-5" />
+            </span>
+            <span class="pr-1 text-sm font-semibold text-ink-900">Free trial<br /><span class="text-xs font-normal text-ink-500">No obligation</span></span>
+          </div>
+
+          <div class="absolute -bottom-5 -right-3 hidden animate-[float_7s_ease-in-out_infinite_0.6s] rounded-2xl bg-sand-50 p-3 shadow-lift ring-1 ring-teal-100 sm:flex sm:items-center sm:gap-2.5">
+            <span class="grid size-9 place-items-center rounded-xl bg-gold-300/30 text-gold-600">
+              <Icon name="lucide:clock" class="size-5" />
+            </span>
+            <span class="pr-1 text-sm font-semibold text-ink-900">Flexible<br /><span class="text-xs font-normal text-ink-500">Morning & evening</span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
