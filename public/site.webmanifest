@@ -1,11 +1,11 @@
 {
-  "name": "Hidaayah Online Quran Academy",
-  "short_name": "Hidaayah Online",
+  "name": "Falaheen Online Quran Academy",
+  "short_name": "Falaheen",
   "description": "One-to-one live online Quran classes for kids & adults.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#fdfbf7",
-  "theme_color": "#226458",
+  "theme_color": "#1a4f46",
   "icons": [
     {
       "src": "/favicon.svg",

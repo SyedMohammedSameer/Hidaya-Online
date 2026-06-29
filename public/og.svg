@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="Hidaayah Online Quran Academy">
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="Falaheen Online Quran Academy">
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0" stop-color="#1a4f46"/>
@@ -11,18 +11,22 @@
   <rect width="1200" height="630" fill="url(#bg)"/>
   <rect width="1200" height="630" fill="url(#dots)"/>
 
-  <!-- mark -->
-  <g transform="translate(96 96)">
-    <rect width="96" height="96" rx="24" fill="#226458"/>
-    <g transform="translate(48 48) scale(1.05) translate(-32 -32)">
-      <path d="M32 20c-4-2.6-9-3.4-14-2.4v23.8c5-1 10-.2 14 2.4 4-2.6 9-3.4 14-2.4V17.6c-5-1-10-.2-14 2.4Z" fill="none" stroke="#faf6ee" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/>
-      <path d="M32 20v23.8" stroke="#faf6ee" stroke-width="2.6" stroke-linecap="round"/>
-      <path d="M45.5 11.5a5.2 5.2 0 1 0 4.6 7.6 6.3 6.3 0 1 1-4.6-7.6Z" fill="#c9a86a"/>
+  <!-- emblem -->
+  <g transform="translate(96 92) scale(1.5)">
+    <circle cx="32" cy="32" r="31" fill="rgba(255,255,255,0.07)"/>
+    <circle cx="32" cy="32" r="26.5" stroke="#c9a86a" stroke-width="1.1" opacity="0.55"/>
+    <path d="M33 11.5a8 8 0 1 0 4.6 14.6 6.4 6.4 0 1 1-4.6-14.6Z" fill="#d8c08a"/>
+    <path d="M44 12.4l.95 2.5 2.5.95-2.5.95-.95 2.5-.95-2.5-2.5-.95 2.5-.95z" fill="#d8c08a"/>
+    <g stroke="#d8c08a" stroke-width="1" stroke-linecap="round" opacity="0.5">
+      <path d="M32 31.5V24.5"/><path d="M32 31.5l-5-4"/><path d="M32 31.5l5-4"/>
     </g>
+    <path d="M32 33c-4-2.7-9.5-3.4-14.5-2.3v13.4c5-1.1 10.5-.4 14.5 2.3 4-2.7 9.5-3.4 14.5-2.3V30.7c-5-1.1-10.5-.4-14.5 2.3Z"
+          fill="#faf6ee" stroke="#133d36" stroke-width="1.5" stroke-linejoin="round"/>
+    <path d="M32 33v13.4" stroke="#133d36" stroke-width="1.5" stroke-linecap="round"/>
   </g>
 
-  <text x="216" y="138" font-family="Georgia, serif" font-size="34" font-weight="600" fill="#faf6ee">Hidaayah <tspan fill="#82bcae">Online</tspan></text>
-  <text x="216" y="170" font-family="Helvetica, Arial, sans-serif" font-size="17" letter-spacing="4" fill="#b1d7cd">QURAN ACADEMY</text>
+  <text x="206" y="138" font-family="Georgia, serif" font-size="40" font-weight="600" fill="#faf6ee">Falaheen</text>
+  <text x="208" y="170" font-family="Helvetica, Arial, sans-serif" font-size="16" letter-spacing="4" fill="#b1d7cd">ONLINE QURAN ACADEMY</text>
 
   <text x="96" y="330" font-family="Georgia, serif" font-size="76" font-weight="600" fill="#ffffff">A Trusted Way to</text>
   <text x="96" y="412" font-family="Georgia, serif" font-size="76" font-weight="600" fill="#ffffff">Learn Quran <tspan fill="#c9a86a">from Home</tspan></text>

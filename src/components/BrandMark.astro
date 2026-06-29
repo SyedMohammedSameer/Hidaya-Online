@@ -1,0 +1,54 @@
+---
+/**
+ * Falaheen emblem: a clean, simplified mark derived from the brand logo.
+ * circular badge · gold crescent + star · open Quran with light rays.
+ * Scales cleanly from favicon size up to hero size.
+ */
+interface Props {
+  variant?: "default" | "light";
+  class?: string;
+}
+const { variant = "default", class: className = "" } = Astro.props;
+const isLight = variant === "light";
+
+const badge = isLight ? "rgba(255,255,255,0.10)" : "#1a4f46"; // teal-700
+const ring = "#c9a86a"; // gold-400
+const gold = "#d8c08a"; // gold-300 (slightly brighter for crescent/star)
+const pages = "#faf6ee"; // cream
+const spine = isLight ? "#0f322c" : "#133d36"; // deep teal
+---
+
+<svg
+  viewBox="0 0 64 64"
+  class={className}
+  role="img"
+  aria-hidden="true"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <!-- badge -->
+  <circle cx="32" cy="32" r="31" fill={badge} />
+  <circle cx="32" cy="32" r="26.5" stroke={ring} stroke-width="1.1" opacity="0.55" />
+
+  <!-- crescent + stars -->
+  <path d="M33 11.5a8 8 0 1 0 4.6 14.6 6.4 6.4 0 1 1-4.6-14.6Z" fill={gold} />
+  <path d="M44 12.4l.95 2.5 2.5.95-2.5.95-.95 2.5-.95-2.5-2.5-.95 2.5-.95z" fill={gold} />
+  <path d="M19.5 15.2l.7 1.8 1.8.7-1.8.7-.7 1.8-.7-1.8-1.8-.7 1.8-.7z" fill={gold} opacity="0.85" />
+
+  <!-- light rays from the Quran -->
+  <g stroke={gold} stroke-width="1" stroke-linecap="round" opacity="0.5">
+    <path d="M32 31.5V24.5" />
+    <path d="M32 31.5l-5-4" />
+    <path d="M32 31.5l5-4" />
+  </g>
+
+  <!-- open Quran -->
+  <path
+    d="M32 33c-4-2.7-9.5-3.4-14.5-2.3v13.4c5-1.1 10.5-.4 14.5 2.3 4-2.7 9.5-3.4 14.5-2.3V30.7c-5-1.1-10.5-.4-14.5 2.3Z"
+    fill={pages}
+    stroke={spine}
+    stroke-width="1.5"
+    stroke-linejoin="round"
+  />
+  <path d="M32 33v13.4" stroke={spine} stroke-width="1.5" stroke-linecap="round" />
+</svg>
