@@ -7,7 +7,7 @@ import tailwindcss from '@tailwindcss/vite';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://hidaayah-online.netlify.app',
+  site: 'https://falaaheen.com',
   integrations: [react(), sitemap(), icon()],
   vite: {
     plugins: [tailwindcss()],

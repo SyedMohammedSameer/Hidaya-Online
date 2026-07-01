@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://hidaayah-online.netlify.app/sitemap-index.xml
+Sitemap: https://falaaheen.com/sitemap-index.xml

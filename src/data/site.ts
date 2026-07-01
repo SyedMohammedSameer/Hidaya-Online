@@ -5,18 +5,18 @@
 
 export const site = {
   // Full name (used in page titles / SEO)
-  name: "Falaheen Online Quran Academy",
+  name: "Falaaheen Online Quran Academy",
   // Brand wordmark + sub-caption (used in the logo lockup)
-  brand: "Falaheen",
+  brand: "Falaaheen",
   brandSub: "Online Quran Academy",
   // Short label for compact spots
-  shortName: "Falaheen",
+  shortName: "Falaaheen",
   tagline: "A Trusted Way to Learn Quran from Home",
   subtitle: "Learn Quran Online with Proper Tajweed",
   description:
-    "Falaheen Online Quran Academy offers one-to-one live online Quran classes for kids & adults: Noorani Qaida, Quran Reading, Tajweed, Hifz, Salah, Duas & Basic Islamic Studies. Free trial class available.",
+    "Falaaheen Online Quran Academy offers one-to-one live online Quran classes for kids & adults: Noorani Qaida, Quran Reading, Tajweed, Hifz, Salah, Duas & Basic Islamic Studies. Free trial class available.",
   // Update this to your live Netlify domain once set
-  url: "https://falaheen.netlify.app",
+  url: "https://falaaheen.com",
   email: "",
   // Indian number in international format for display
   phoneDisplay: "+91 76709 65471",
@@ -32,7 +32,7 @@ export function whatsappLink(message?: string): string {
 
 export const whatsappMessages = {
   general:
-    "Assalamu Alaikum, I came across Falaheen Online Quran Academy and would like to know more about your classes.",
+    "Assalamu Alaikum, I came across Falaaheen Online Quran Academy and would like to know more about your classes.",
   trial:
     "Assalamu Alaikum, I would like to book a FREE trial Quran class. Please share the details.",
   fees: "Assalamu Alaikum, I would like to know more about the fees for your Quran classes.",
