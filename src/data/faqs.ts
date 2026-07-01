@@ -23,6 +23,6 @@ export const faqs: Faq[] = [
   },
   {
     q: "What are the class timings?",
-    a: "We offer flexible morning and evening timings according to availability, designed to fit around busy family and work schedules.",
+    a: "Classes are available 24/7. Timings are completely flexible and arranged with you after a quick chat, so they fit around your family and work schedule wherever you are.",
   },
 ];
